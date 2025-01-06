@@ -1,13 +1,18 @@
-import { FormEvent, useState, FC } from "react";
-import { CgAddR } from "react-icons/cg";
+import React, { FormEvent, useState } from "react";
 
 import "./styles.css";
+import { useCreateTask } from "../../../services/tasks/post";
 
 export const Input = () => {
 	const [value, setValue] = useState("");
+	const mutate = useCreateTask();
 	function handleSubmit(event: FormEvent) {
 		event.preventDefault();
 		setValue("");
+		mutate({
+			value,
+			category: "TODO",
+		});
 	}
 	return (
 		<form onSubmit={handleSubmit} className="form">
@@ -16,8 +21,8 @@ export const Input = () => {
 				placeholder="be inspired"
 				value={value}
 				onChange={(e) => setValue(e.target.value)}
+				className="input"
 			/>
-			<CgAddR className="icon" />
 		</form>
 	);
 };

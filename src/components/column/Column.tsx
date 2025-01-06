@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import "./styles.css";
 import { TaskCategory, TaskType } from "../../declarations";
 import { useGetTasks } from "../../services";
@@ -16,6 +16,7 @@ export const Column: FC<ColumnProps> = ({ filter }) => {
 
 		const Tasks = (tasksQuery.data || [])
 			.filter((task) => task.category === filter)
+			// eslint-disable-next-line react/jsx-key
 			.map((task) => <Task task={task} mode="display" />);
 
 		return filter === "TODO" ? [InitialTask, ...Tasks] : Tasks;

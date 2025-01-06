@@ -1,9 +1,13 @@
 .task {
-	width: 320px;
   height: 48px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border: 1px dashed black;
   gap: 8px;
+  
+  @media(min-width: 992px){
+    width: 256px;
+    
+  }
 }

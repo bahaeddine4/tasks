@@ -9,3 +9,17 @@
   width: 24px;
   height: 24px;
 }
+
+.input{
+  border: none;
+  border-bottom: 1px solid lightgrey;
+  flex: 1;
+  height: 100%;
+  margin-right: 8px;
+}
+
+.input:focus-visible {
+  outline: none;
+   border: none;
+   border-bottom: 1px solid black;
+}

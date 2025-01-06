@@ -9,7 +9,7 @@ type EditProps = {
 export const Edit: FC<EditProps> = ({ task }) => {
 	return (
 		<div className="edit">
-			<p>{task.value}</p>
+			<p className="value">{task.value}</p>
 			<CgPen className="icon" />
 		</div>
 	);
